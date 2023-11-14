@@ -1,0 +1,14 @@
+app:
+  dns: "http://localhost:8080"
+
+quarkus:
+  datasource:
+    db-kind: mysql
+    username: root
+    password: root
+    jdbc:
+      driver: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:33060/onesimplelink?createDatabaseIfNotExist=true
+  hibernate-orm:
+    database:
+      generation: update
