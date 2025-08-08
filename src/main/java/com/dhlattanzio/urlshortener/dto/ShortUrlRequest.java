@@ -7,6 +7,9 @@ public record ShortUrlRequest(
         @NotEmpty(message = "URL cannot be empty")
         String url,
 
-        @Pattern(regexp = "^[a-zA-Z0-9]$", message = "Keyword must be alphanumeric")
-        String keyword
+        @Pattern(regexp = "^[a-zA-Z0-9]+[a-zA-Z0-9-]*$", message = "Tag must be alphanumeric")
+        String tag,
+
+        @NotEmpty(message = "Password cannot be empty")
+        String password
 ) {}

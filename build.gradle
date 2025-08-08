@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'io.quarkus'
+    id 'org.jetbrains.kotlin.jvm'
 }
 
 repositories {
@@ -15,19 +16,18 @@ dependencies {
     implementation 'io.quarkus:quarkus-resteasy'
     implementation 'io.quarkus:quarkus-hibernate-orm-panache'
     implementation 'io.quarkus:quarkus-resteasy-jackson'
-    implementation 'io.quarkus:quarkus-jdbc-mysql'
+    implementation 'io.quarkus:quarkus-jdbc-postgresql'
     implementation 'io.quarkus:quarkus-arc'
     implementation 'io.quarkus:quarkus-hibernate-orm'
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 group 'com.dhlattanzio'
 version '1.0-SNAPSHOT'
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
 }
 
 test {
@@ -40,4 +40,7 @@ compileJava {
 
 compileTestJava {
     options.encoding = 'UTF-8'
+}
+kotlin {
+    jvmToolchain(17)
 }

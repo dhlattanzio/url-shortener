@@ -1,5 +1,5 @@
 package com.dhlattanzio.urlshortener.service;
 
-public interface KeywordGenerator {
+public interface TagGenerator {
     String generateUnique();
 }

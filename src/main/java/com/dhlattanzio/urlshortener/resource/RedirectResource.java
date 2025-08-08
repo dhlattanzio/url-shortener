@@ -17,15 +17,15 @@ public class RedirectResource {
     }
 
     @GET
-    @Path("/{keyword}")
-    public Response redirect(@PathParam("keyword") String keyword) {
-        var url = urlShortenerService.getUrlOf(keyword);
+    @Path("/{tag}")
+    public Response redirect(@PathParam("tag") String tag) {
+        var url = urlShortenerService.getUrlOf(tag);
         return Response.status(Response.Status.FOUND).location(URI.create(url)).build();
     }
 
     @GET
-    @Path("/{keyword}/qr")
-    public Response getQR(@PathParam("keyword") String keyword) {
+    @Path("/{tag}/qr")
+    public Response getQR(@PathParam("tag") String tag) {
         return Response.status(Response.Status.NOT_IMPLEMENTED).build();
     }
 }

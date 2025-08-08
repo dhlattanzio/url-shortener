@@ -12,7 +12,7 @@ import java.time.Instant;
 @Entity
 public class ShortenedUrl extends PanacheEntityBase {
     @Id
-    public String keyword;
+    public String tag;
 
     public String url;
 

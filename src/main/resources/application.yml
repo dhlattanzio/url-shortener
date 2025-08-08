@@ -1,14 +1,7 @@
 app:
-  dns: ${APP_DNS}
-  name: "OneSimpleLink"
+  name: "url-shortener"
 
 quarkus:
-  datasource:
-    db-kind: ${APP_DB_KIND:mysql}
-    username: ${APP_DB_USERNAME}
-    password: ${APP_DB_PASSWORD}
-    jdbc:
-      url: jdbc:mysql://${APP_DB_HOST}/${APP_DB_NAME:onesimplelink}?createDatabaseIfNotExist=true
   hibernate-orm:
     database:
       generation: update
